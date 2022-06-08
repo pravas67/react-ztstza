@@ -1,4 +1,5 @@
 import React from 'react';
+import Column from '../components/Column';
 
 class Product extends React.Component {
   renderStock() {
@@ -12,8 +13,7 @@ class Product extends React.Component {
     const data = this.props.pdata;
     // console.log('..after..Product......', data);
     return (
-      <div>
-        <h3>Product</h3>
+      <Column size={4}>
         <img src={data.productImage} />
         <h3>{data.productName}</h3>
         <h4>{data.productPrice}</h4>
@@ -23,7 +23,7 @@ class Product extends React.Component {
           </button>
         ) : null}
         {this.renderStock()}
-      </div>
+      </Column>
     );
   }
 }

@@ -21,7 +21,7 @@ class ProductList extends React.Component {
   render() {
     return (
       <div>
-        <h3>ProductList</h3>
+        <h3></h3>
         {this.state.plist.map((item) => (
           <Product
             pdata={item}
