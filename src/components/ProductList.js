@@ -4,14 +4,15 @@ import Product from '../components/Product';
 
 class ProductList extends React.Component {
   state = { plist: [] };
-  componetDidMount() {
+  componentDidMount() {
     this.getData();
   }
   getData() {
     ProductService.getProducts()
       .then((res) => {
-        console.log('Response', res);
+        // console.log('Response', res);
         this.setState({ plist: res.data });
+        // this.state.plist = res.data;
       })
       .catch((err) => {
         console.log('Error', err);
@@ -20,13 +21,14 @@ class ProductList extends React.Component {
   render() {
     return (
       <div>
-        {this.state.plist.map((item) => {
+        <h3>ProductList</h3>
+        {this.state.plist.map((item) => (
           <Product
             pdata={item}
             key={item.productId}
             btnClick={(id, lbl) => console.log('Id', id, 'Label', lbl)}
-          />;
-        })}
+          />
+        ))}
       </div>
     );
   }

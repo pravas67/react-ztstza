@@ -8,9 +8,12 @@ class Product extends React.Component {
     return <p>Out of stock</p>;
   }
   render() {
+    // console.log('.before...Product......', this.props.pdata);
     const data = this.props.pdata;
+    // console.log('..after..Product......', data);
     return (
       <div>
+        <h3>Product</h3>
         <img src={data.productImage} />
         <h3>{data.productName}</h3>
         <h4>{data.productPrice}</h4>
